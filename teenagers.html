@@ -1,0 +1,154 @@
+<head>
+  <title>Create a Teenager</title>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>Create a Teenager</h1>
+    </header>
+
+    <form class="new-teenager">
+      Name:
+      <input type="text" name="charName" />
+      <br/><br/>
+      Type:
+      <select name="type">
+        <option value="human">Human</option>
+        <option value="near-human">Near Human</option>
+        <option value="not-very-near-human">Not Very Near Human</option>
+        <option value="real-weirdie">Real Weirdie</option>
+      </select>
+      <br/><br/>
+      Smarts:
+      <input type="number" name="smarts" id="smarts" />
+      <br/><br/>
+      Relationship with Parents:
+      <input type="number" name="rwp" id="rwp" />
+      <br/><br/>
+      Driving:
+      <input type="number" name="driving" id="driving" />
+      <br/><br/>
+      Cool:
+      <input type="number" name="cool" id="cool" />
+      <br/><br/>
+      Bod:
+      <input type="number" name="bod" id="bod" />
+      <br/><br/>
+      Luck:
+      <input type="number" name="luck" id="luck" />
+      <br/><br/>
+      Looks:
+      <input type="number" name="looks" id="looks" />
+      <br/><br/>
+      Bonk:
+      <input type="number" name="bonk" id="bonk" />
+      <br/><br/>
+      Powers:
+      <input type="text" name="powerA" />
+      <br/><br/>
+      <input type="text" name="powerB" />
+      <br/><br/>
+      <input type="text" name="powerC" />
+      <br/><br/>
+      Knacks:
+      <input type="text" name="knackA" />
+      <input type="number" name="bonusA" />
+      <select name="statA">
+        <option value="smarts">Smarts</option>
+        <option value="rwp">Relationship with Parents</option>
+        <option value="driving">Driving</option>
+        <option value="cool">Cool</option>
+        <option value="bod">Bod</option>
+        <option value="luck">Luck</option>
+        <option value="looks">Looks</option>
+        <option value="bonk">Bonk</option>
+      </select>
+      <br/><br/>
+      <input type="text" name="knackB" />
+      <input type="number" name="bonusB" />
+      <select name="statB">
+        <option value="smarts">Smarts</option>
+        <option value="rwp">Relationship with Parents</option>
+        <option value="driving">Driving</option>
+        <option value="cool">Cool</option>
+        <option value="bod">Bod</option>
+        <option value="luck">Luck</option>
+        <option value="looks">Looks</option>
+        <option value="bonk">Bonk</option>
+      </select>
+      <br/><br/>
+      <input type="text" name="knackC" />
+      <input type="number" name="bonusC" />
+      <select name="statC">
+        <option value="smarts">Smarts</option>
+        <option value="rwp">Relationship with Parents</option>
+        <option value="driving">Driving</option>
+        <option value="cool">Cool</option>
+        <option value="bod">Bod</option>
+        <option value="luck">Luck</option>
+        <option value="looks">Looks</option>
+        <option value="bonk">Bonk</option>
+      </select>
+      <br/><br/>
+      Traits:
+      <input type="text" name="traitA" />
+      <br/><br/>
+      <input type="text" name="traitB" />
+      <br/><br/>
+      <input type="text" name="traitC" />
+      <br/><br/>
+      <input type="submit" value="submit">
+    </form>
+    <button id="stats">Roll Stats</button>
+    <ul>
+      {{#each teenagers}}
+        {{> teenager}}
+      {{/each}}
+    </ul>
+  </div>
+</body>
+
+<template name="teenager">
+  <li class="teenager">
+      <h2>{{charName}}</h2>
+      <h3>{{type}}</h3>
+        <ul class="stat1">
+          <li>Smarts: {{stats.smarts}}</li>
+          <li>Relationship with Parents: {{stats.rwp}}</li>
+          <li>Driving: {{stats.driving}}</li>
+          <li>Cool: {{stat.cool}}</li>
+        </ul>
+        <ul class="stat2">
+          <li>Bod: {{stats.bod}}</li>
+          <li>Luck: {{stats.luck}}</li>
+          <li>Looks: {{stats.looks}}</li>
+          <li>Bonk: {{stats.bonk}}</li>
+        </ul>
+      <div class="powers">
+        <h4>Powers</h4>
+        <ul>
+          <li>{{powers.powerA}}</li>
+          <li>{{powers.powerB}}</li>
+          <li>{{powers.powerC}}</li>
+        </ul>
+      </div>
+      <div class="traits">
+        <h4>Traits</h4>
+        <ul>
+          <li>{{traits.traitA}}</li>
+          <li>{{traits.traitB}}</li>
+          <li>{{traits.traitC}}</li>
+        </ul>
+      </div> 
+      <div class="knacks">
+        <h4>Knacks</h4>
+        <ul>
+          <li>{{knacks.knackA.nameA}} {{knacks.knackA.bonusA}}</li>
+          <li>{{knacks.knackB.nameB}} {{knacks.knackB.bonusB}}</li>
+          <li>{{knacks.knackC.nameC}} {{knacks.knackC.bonusC}}</li>
+        </ul>
+      </div>
+  </li>
+  <button class="delete">Delete</button>
+</template>
